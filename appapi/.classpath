@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/appserver"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/isfj_139_14_jdk5.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ns_all_in_lite.jar"/>
+	<classpathentry kind="lib" path="E:/java/tomcat/t1/apache-tomcat-8.5.39/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="E:/java/tomcat/t1/apache-tomcat-8.5.39/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="E:/java/tomcat/t1/apache-tomcat-8.5.39/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

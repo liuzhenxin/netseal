@@ -1,0 +1,38 @@
+/*鍏叡鏍峰紡*/
+.marginTop{margin-top:2%;}
+.paddingTop{padding-top:2%;}
+
+/*瀹氫箟浜嗗浘琛ㄧ殑涓夌鏍峰紡锛屽缓璁娇鐢╠ef*/
+.chart-def{
+    width: 100%;
+    height: 300%;
+    min-width: 300px;
+    min-height: 300px; 
+}
+.chart-lg{
+    width:100%;
+    height: 400%;
+    min-width: 400px;
+    min-height: 400px;
+}
+.chart-sm{
+    width:100%;
+    height: 200%;
+    min-width: 200px;
+    min-height: 200px;
+}
+/*
+鍙拡瀵硅澶囬厤缃�璁惧鐩戞帶鐨勫垎缁勫悕绉板拰璁惧閫夐」鍗＄殑闂磋窛
+*/
+.separator {
+    background-image: -webkit-linear-gradient(to top, white, #F2F2F2);
+    background-image: linear-gradient(to top, white, #F2F2F2);
+    margin-bottom:10px;
+    height:15px;
+    border-top:1px #CFCBCB solid;
+}
+.errorMac {
+	font-size: bold;
+	color: red;
+}
+

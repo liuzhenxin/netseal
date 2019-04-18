@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+	<context:component-scan base-package="cn.com.infosec.netseal.webserver.controller" />
+	<mvc:default-servlet-handler />
+	<mvc:annotation-driven />
+	<aop:aspectj-autoproxy />
+
+	<!-- configure the InternalResourceViewResolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 登录拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/audit/*" />
+			<mvc:mapping path="/company/*" />
+			<mvc:mapping path="/count/*" />
+			<mvc:mapping path="/crl/*" />
+			<mvc:mapping path="/key/*" />
+			<mvc:mapping path="/log/*" />
+			<mvc:mapping path="/monitor/*" />
+			<mvc:mapping path="/role/*" />
+			<mvc:mapping path="/sealManage/*" />
+			<mvc:mapping path="/stamp/*" />
+			<mvc:mapping path="/system/*" />
+			<mvc:mapping path="/sysUser/*" />
+			<mvc:mapping path="/template/*" />
+			<mvc:mapping path="/userCertReuqest/*" />
+			<mvc:mapping path="/userManage/*" />
+			<mvc:exclude-mapping path="/sysUser/toLogin.do" />
+			<mvc:exclude-mapping path="/sysUser/login.do" />
+			<mvc:exclude-mapping path="/sysUser/loginByCert.do" />
+			<mvc:exclude-mapping path="/sysUser/loginVerifySign.do" />
+			<mvc:exclude-mapping path="/sysUser/timeout.do" />
+			<mvc:exclude-mapping path="/sysUser/loginFirst.do" />
+			<mvc:exclude-mapping path="/sysUser/login_sso.do" />
+			<mvc:exclude-mapping path="/system/dbConfigTest.do" />
+			<mvc:exclude-mapping path="/sysUser/dbConfigInitSave.do" />
+			<mvc:exclude-mapping path="/sysUser/downLicenseApp.do" />
+			<mvc:exclude-mapping path="/sysUser/uploadLicense.do" />
+			<mvc:exclude-mapping path="/sysUser/checkLicense.do" />
+			<mvc:exclude-mapping path="/sysUser/viewLicense.do" />
+			<mvc:exclude-mapping path="/sysUser/deleteLicense.do" />
+			<mvc:exclude-mapping path="/sysUser/saveLicense.do" />
+			<mvc:exclude-mapping path="/sysUser/sysConfigInit.do" />
+			<mvc:exclude-mapping path="/sysUser/sysConfigInitSave.do" />
+			<bean class="cn.com.infosec.netseal.webserver.interceptor.SysUserInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<aop:config>
+		<aop:aspect id="logAspect" ref="logAspectBean">
+			<aop:pointcut id="logPointcut"
+				expression="execution(* cn.com.infosec.netseal.webserver.controller..*.*(..))" />
+			<aop:around pointcut-ref="logPointcut" method="doAround" />
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="logAspectBean" class="cn.com.infosec.netseal.webserver.aop.LogAspect" />
+</beans>
