@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.template;
+package cn.com.infosec.netseal.webserver.controller.template;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -68,7 +68,6 @@ public class TemplateController  extends BaseController{
 	/**
 	 * 制作印模跳转
 	 * 
-	 * @param template
 	 * @return
 	 */
 	@RequestMapping(value = "toAddTemplate")
@@ -80,7 +79,6 @@ public class TemplateController  extends BaseController{
 	/**
 	 * 制作印模
 	 * 
-	 * @param template
 	 * @return
 	 * @throws Exception
 	 */
@@ -96,15 +94,19 @@ public class TemplateController  extends BaseController{
 
 			String tName = templateVO.getName();
 			List<TemplateVO> tempList = templateService.getTemplateByName(tName);
-			if (tempList.size() > 0) 
+			if (tempList.size() > 0){
+
 				throw new WebDataException("印模名称重复");
+			}
 
 			long notBefor = CommonUtil.timeStrStart(templateVO.getNotBeforCn());
 			long notAfter = CommonUtil.timeStrEnd(templateVO.getNotAfterCn());
 
 			long nowTime = System.currentTimeMillis();
-			if (nowTime > notAfter)
+			if (nowTime > notAfter){
+
 				throw new WebDataException("过期印模,无法添加");
+			}
 
 			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
 
@@ -115,8 +117,10 @@ public class TemplateController  extends BaseController{
 				if (file !=null && file.getSize() > 0) {
 					byte[] fileByte = PhotoUitl.convertBGColor(file.getBytes(),(int) (templateVO.getTransparency()*2.55));
 					String photoType = "." + FileUtil.getFileSuffix(file.getOriginalFilename());
-					if (!photoType.equals(Constants.PHOTO_SUFFIX)) 
+					if (!photoType.equals(Constants.PHOTO_SUFFIX)) {
+
 						throw new WebDataException("图片格式错误,请选择" + Constants.PHOTO_SUFFIX + "文件");
+					}
 
 					try {
 						Image.getInstance(file.getBytes());
@@ -161,7 +165,6 @@ public class TemplateController  extends BaseController{
 	/**
 	 * 删除印模
 	 * 
-	 * @param account
 	 * @return
 	 * @throws Exception 
 	 */
@@ -223,8 +226,10 @@ public class TemplateController  extends BaseController{
 			long notBefor = CommonUtil.timeStrStart(templateVO.getNotBeforCn());
 			long notAfter = CommonUtil.timeStrEnd(templateVO.getNotAfterCn());
 			long nowTime = System.currentTimeMillis();
-			if (nowTime > notAfter)
+			if (nowTime > notAfter){
+
 				throw new WebDataException("过期印模,修改失败");
+			}
 
 			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
 
@@ -238,9 +243,11 @@ public class TemplateController  extends BaseController{
  				    byte[] fileByte =null;
 					if(file != null && file.getSize() > 0) {
 						 String photoType = "." + FileUtil.getFileSuffix(file.getOriginalFilename());
-						if (!photoType.equals(Constants.PHOTO_SUFFIX)) 
+						if (!photoType.equals(Constants.PHOTO_SUFFIX)) {
+
 							throw new WebDataException("图片格式错误,请选择" + Constants.PHOTO_SUFFIX + "文件");
-						
+						}
+
 						try {
 							Image.getInstance(file.getBytes());
 						} catch (Exception e) {
@@ -248,8 +255,10 @@ public class TemplateController  extends BaseController{
 						}
 						
 						long fileSize = file.getSize();
-						if (fileSize / 1024 > Constants.PHOTO_SIZE)
+						if (fileSize / 1024 > Constants.PHOTO_SIZE){
+
 							throw new WebDataException("印模图片不超过" + Constants.PHOTO_SIZE + "KB");
+						}
 						fileByte = PhotoUitl.convertBGColor(file.getBytes(),(int) (templateVO.getTransparency()*2.55));
 						
 							

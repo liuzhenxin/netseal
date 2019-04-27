@@ -5,13 +5,13 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Properties;
 
+import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cn.com.infosec.netseal.appserver.base.BaseProcessor;
 import cn.com.infosec.netseal.appserver.service.cert.CertServiceImpl;
-import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import cn.com.infosec.netseal.appserver.service.key.KeyServiceImpl;
 import cn.com.infosec.netseal.appserver.service.photoData.PhotoDataServiceImpl;
 import cn.com.infosec.netseal.appserver.service.seal.SealServiceImpl;

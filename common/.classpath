@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/aspectjrt-1.7.4.jar"/>
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/aspectjweaver-1.7.4.jar"/>
@@ -75,5 +70,16 @@
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/zip4j_1.3.1.jar"/>
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/zxing_3.2.0.jar"/>
 	<classpathentry kind="lib" path="/webserver/WebRoot/WEB-INF/lib/zxing-javase-3.2.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_6.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

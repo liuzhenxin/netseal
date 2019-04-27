@@ -24,7 +24,8 @@ public class NetWorkUtil {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// System.out.println(getHostMac("10.20.61.47"));
-		System.out.println(getHostMac("eth0"));
+		 //System.out.println(getHostMac("10.20.61.47"));
+		 System.out.println(getHostMac("192.168.1.101"));
+		//System.out.println(getHostMac("eth0"));
 	}
 }

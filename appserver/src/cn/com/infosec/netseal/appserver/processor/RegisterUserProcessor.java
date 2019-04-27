@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cn.com.infosec.netseal.appserver.base.BaseProcessor;
 import cn.com.infosec.netseal.appserver.service.cert.CertServiceImpl;
-import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import cn.com.infosec.netseal.appserver.service.company.CompanyServiceImpl;
 import cn.com.infosec.netseal.appserver.service.user.UserServiceImpl;
 import cn.com.infosec.netseal.common.communication.message.Request;

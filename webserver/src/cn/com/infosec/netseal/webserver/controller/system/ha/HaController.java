@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.system.ha;
+package cn.com.infosec.netseal.webserver.controller.system.ha;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,5 +1,5 @@
 package cn.com.infosec.netseal.common.define;
-
+@SuppressWarnings("all")
 public class Constants {
 
 	public static final String VERISON = "NetSeal 1.0.004.2 build201901111531"; // 系统版本号统一出处
@@ -71,7 +71,7 @@ public class Constants {
 
 	// public static final String ROOT_PATH =
 	// "E:/eclipseprj/source2016/NetSeal_v4/";
-	public static final String ROOT_PATH = "F:/workspace/NetSeal/src";
+	public static final String ROOT_PATH = "F:/workspace/NetSeal/src/";
 	// public static final String ROOT_PATH = "/opt/infosec/NetSeal/";
 
 	public static final String SEAL_PATH = ROOT_PATH + "seal/";

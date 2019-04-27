@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.system;
+package cn.com.infosec.netseal.webserver.controller.system;
 
 import java.io.File;
 import java.io.IOException;

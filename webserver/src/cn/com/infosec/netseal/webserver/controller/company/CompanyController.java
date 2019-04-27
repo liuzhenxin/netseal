@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.company;
+package cn.com.infosec.netseal.webserver.controller.company;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,6 +2,7 @@ package cn.com.infosec.netseal.appserver.service.request;
 
 import java.util.List;
 
+import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.com.infosec.netseal.appserver.service.BaseService;
 import cn.com.infosec.netseal.appserver.service.cert.CertServiceImpl;
-import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import cn.com.infosec.netseal.appserver.service.key.KeyServiceImpl;
 import cn.com.infosec.netseal.appserver.service.photoData.PhotoDataServiceImpl;
 import cn.com.infosec.netseal.common.config.ConfigUtil;

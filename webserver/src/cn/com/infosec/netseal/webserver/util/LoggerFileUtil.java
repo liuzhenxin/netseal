@@ -17,15 +17,17 @@ public class LoggerFileUtil {
 		File fileDir = new File(path);
 
 		File[] fs = fileDir.listFiles(new FileFilter() {
+			@Override
 			public boolean accept(File file) {
 				return file.getName().startsWith(logType);
 			}
 		});
 		
 		if(fs!=null){
-			List<File> list =Arrays.asList(fs);			
+			List<File> list = Arrays.asList(fs);
 			Collections.sort(list, new Comparator<File>() {  
-	            public int compare(File file, File newFile) {  
+	            @Override
+				public int compare(File file, File newFile) {
 	                if (file.lastModified() < newFile.lastModified()) {  
 	                    return 1;  
 	                } else if (file.lastModified() == newFile.lastModified()) {  

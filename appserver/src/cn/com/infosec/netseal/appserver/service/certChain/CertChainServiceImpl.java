@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.appserver.service.certChain;
+package cn.com.infosec.netseal.appserver.service.certChain;
 
 import java.security.cert.X509Certificate;
 import java.util.Hashtable;

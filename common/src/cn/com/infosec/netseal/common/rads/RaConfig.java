@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.common.rads;
+package cn.com.infosec.netseal.common.rads;
 
 import java.io.FileInputStream;
 import java.security.Security;
@@ -31,8 +31,10 @@ public class RaConfig {
 	}
 
 	public static void init() throws Exception {
-		if (ca_61_List == null)
+		if (ca_61_List == null){
+
 			return;
+		}
 
 		// 加载配置文件
 		CertificateFactory cf = CertificateFactory.getInstance("X.509", "INFOSEC");

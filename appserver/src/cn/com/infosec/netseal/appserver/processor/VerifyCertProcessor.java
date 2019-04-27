@@ -2,12 +2,12 @@ package cn.com.infosec.netseal.appserver.processor;
 
 import java.util.Properties;
 
+import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cn.com.infosec.netseal.appserver.base.BaseProcessor;
-import cn.com.infosec.netseal.appserver.service.certChain.CertChainServiceImpl;
 import cn.com.infosec.netseal.common.communication.message.Request;
 import cn.com.infosec.netseal.common.communication.message.Response;
 import cn.com.infosec.netseal.common.define.Constants;

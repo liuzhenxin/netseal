@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.com.infosec.netseal.common.rads.RaConfig;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ import cn.com.infosec.netseal.common.define.Constants;
 import cn.com.infosec.netseal.common.entity.vo.config.NetCertCaVO;
 import cn.com.infosec.netseal.common.exceptions.WebDataException;
 import cn.com.infosec.netseal.common.log.LoggerUtil;
-import cn.com.infosec.netseal.common.rads.RaConfig;
 import cn.com.infosec.netseal.common.util.DateUtil;
 import cn.com.infosec.netseal.common.util.FileUtil;
 import cn.com.infosec.netseal.common.util.StringUtil;

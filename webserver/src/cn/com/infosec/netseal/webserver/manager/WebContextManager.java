@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import cn.com.infosec.netseal.common.rads.RaConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +22,6 @@ import cn.com.infosec.netseal.common.entity.vo.config.NetCertCaVO;
 import cn.com.infosec.netseal.common.log.LoggerUtil;
 import cn.com.infosec.netseal.common.manager.LicenseManager;
 import cn.com.infosec.netseal.common.manager.SchedulerManager;
-import cn.com.infosec.netseal.common.rads.RaConfig;
 import cn.com.infosec.netseal.common.scheduler.CrlScheduler;
 import cn.com.infosec.netseal.common.scheduler.IDDeleteScheduler;
 import cn.com.infosec.netseal.common.scheduler.NtpScheduler;
@@ -213,8 +213,10 @@ public class WebContextManager {
 
 			// sm2_ca
 			netCertCa = config.getNetCertCaSM2();
-			if (StringUtil.isNotBlank(netCertCa.getTransIP()) && netCertCa.getTransPort() != 0)
+			if (StringUtil.isNotBlank(netCertCa.getTransIP()) && netCertCa.getTransPort() != 0){
+
 				netCertCaList.add(netCertCa);
+			}
 
 			if (netCertCaList.size() > 0) {
 				RaConfig.setCa_61_List(netCertCaList);

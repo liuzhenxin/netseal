@@ -175,7 +175,7 @@ public class NetSealClient {
 		if (s == null) {
 			int errCode = ErrCode.CONNECT_GET_TIMEOUT;
 			String errMsg = "get conn(is null) from pool timeout";
-
+			
 			println("errCode=" + errCode + ", errMsg=" + errMsg);
 			throw new AppApiException(errCode, ErrMsg.getErrMsg(errCode));
 		}

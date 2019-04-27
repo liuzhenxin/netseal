@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.system.license;
+package cn.com.infosec.netseal.webserver.controller.system.license;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -201,8 +201,9 @@ public class LicenseController  extends BaseController {
 	@RequestMapping(value = "/deleteLicense")
 	public String deleteLicense(HttpSession httpSession) {
 		String path = (String) httpSession.getAttribute("filePath");
-		if (path != null)
-			FileUtil.deleteFileAndDir(path);
+		if (path != null) {
+            FileUtil.deleteFileAndDir(path);
+        }
 		
 		return licenseShow();
 	}
@@ -222,8 +223,11 @@ public class LicenseController  extends BaseController {
 		try {
 			File tmpLicense = new File(path);
 			String tmpLicenseParent = tmpLicense.getParent();
-			if (!tmpLicense.exists())
+			if (!tmpLicense.exists()) {
+
 				throw new WebDataException("license文件失效, 请重新上传");
+			}
+
 
 			// 检查license数据有效性
 			ConfigUtil config = ConfigUtil.getInstance();
@@ -242,8 +246,9 @@ public class LicenseController  extends BaseController {
 			File file = new File(strNewPath);
 			tmpLicense.renameTo(file);
 			boolean result = ServiceManager.reloadConfig();
-			if (!result)
-				throw new WebDataException("更新成功,同步配置出错,重启可同步生效,详细信息查看日志");
+			if (!result) {
+                throw new WebDataException("更新成功,同步配置出错,重启可同步生效,详细信息查看日志");
+            }
 			message = "更新成功, 实时生效";
 			FileUtil.deleteDir(tmpLicenseParent);
 		} catch (WebDataException e) {

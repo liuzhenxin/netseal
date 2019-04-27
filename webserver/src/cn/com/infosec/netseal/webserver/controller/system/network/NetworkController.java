@@ -1,4 +1,4 @@
-﻿package cn.com.infosec.netseal.webserver.controller.system.network;
+package cn.com.infosec.netseal.webserver.controller.system.network;
 
 import java.util.List;
 import java.util.Properties;
